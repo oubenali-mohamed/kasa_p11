@@ -1,10 +1,11 @@
 import * as React from 'react'
+import Gallery from '../components/Gallery/Gallery'
 
 function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Accueil</h1>
+          <Gallery/>
       </header>
     </div>
   )
