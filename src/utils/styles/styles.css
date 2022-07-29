@@ -72,6 +72,14 @@
          width: 60%;
         margin-left: -50px;
      }
+     #logoFooter{
+        position: absolute;
+        left: -5%;
+    }
+    #paraFooter{
+       margin-left: 35%;
+       padding-top: 150px;
+    }
     
 }
 
@@ -147,5 +155,13 @@
         font-size: 14px;
         width: 60%;
         margin-left: -15%;
+    }
+    #logoFooter{
+        position: absolute;
+        left: -10%;
+    }
+    #paraFooter{
+       margin-left: 80px;
+       padding-top: 150px;
     }
 }

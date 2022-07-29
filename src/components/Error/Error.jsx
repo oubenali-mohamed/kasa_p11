@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import "../../utils/styles/styles.css"
 import settings from '../../utils/styles/settings'
 
+
 const StyleSpan = styled.span`
 position: absolute;
 left: 35%;
@@ -44,6 +45,8 @@ function Error() {
       <StyleTitre id='msgError'>Oups! La page que vous demandez n'existe pas</StyleTitre>
       <StyleLink to="/" id="lienHome">Retourner sur la page d’accueil</StyleLink>
     </div>
+    
+     
   )
 }
 
