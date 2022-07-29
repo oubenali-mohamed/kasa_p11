@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import "../../utils/styles/styles.css"
+import settings from '../../utils/styles/settings'
 
 const StyleHeader = styled.div`
 width: 100%;
@@ -18,21 +20,22 @@ margin-left: 20px;
 `
 const StyleLink = styled(Link)`
 padding: 15px;
-color: red;
+font-family: ${settings.fontFamily};
+color: ${settings.primary};
 text-decoration: none;
 font-size: 24px;
 margin-right: 50px;
 `
 function Header() {
   return (
-    <StyleHeader>
+    <StyleHeader className='header-mobil'>
         <NavLink to="/"> 
-          <StyledLogo src={logo} alt="logo Kasa" />
+          <StyledLogo id='logo' src={logo} alt="logo Kasa" />
         </NavLink>
      
-      <nav>
-        <StyleLink to="/">Accueil</StyleLink>
-        <StyleLink to="/About">A Propos</StyleLink>
+      <nav className='navigation-mobil'>
+        <StyleLink to="/">Accueil </StyleLink>
+        <StyleLink  to="/About">A Propos </StyleLink>
       </nav>
     </StyleHeader>
   )

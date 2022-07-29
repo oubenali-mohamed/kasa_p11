@@ -1,0 +1,151 @@
+@media all and (min-width: 481px) and (max-width: 1200px){
+    #root{
+        width: auto;
+      }
+    .header-mobil{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    #logo{
+        width: 80px;
+        height: auto;
+       }
+    .navigation-mobil{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        }
+    .navigation-mobil > a{
+            font-size: 24px;
+            margin-top: -15px;
+          }  
+    #Banner{
+            width: auto;
+            height: 120px;
+          }
+    #Banner>img{
+            width: 100%;
+            height: 100%;
+          }
+    #Banner>h1{
+        width: auto;
+            top: 140px;
+            font-size: 30px;
+            }
+    #section-gallery{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: auto;
+                margin-top: 20px;
+            }
+    #Card{
+        width: 25%;
+        margin-left:5px;
+        margin-right: 5px;
+        height: 170px;
+            }
+    #Card>img{
+             width: 100%;
+            }
+    #Card>span{
+        font-size: 16px;
+        width: auto;
+    }
+    #error{
+        top: 30%;
+        left: 22%;
+        width: auto;
+        font-size: 300px;
+     }
+     #msgError{
+         top: 55%;
+         left: 20%;
+         text-align: center;
+         width: 80%;
+         font-size: 26px;
+     }
+     #lienHome{
+         font-size: 20px;
+         width: 60%;
+        margin-left: -50px;
+     }
+    
+}
+
+@media all and (max-device-width: 480px){
+  #root{
+    width: auto;
+  }
+  .header-mobil{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #logo{
+   width: 80px;
+   height: auto;
+  }
+ 
+ .navigation-mobil{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+  .navigation-mobil > a{
+    font-size: 14px;
+   margin-top: -10px;
+   margin-right: 10px;
+  }
+  #Banner{
+    width: auto;
+    height: 120px;
+  }
+  #Banner>img{
+    width: 100%;
+    height: 100%;
+  }
+  #Banner>h1{
+    height: 48px;
+    width: 217px;
+    left: 36px;
+    top: 114px;
+    font-size: 30px;
+    }
+    #section-gallery{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin-top: 20px;
+    }
+    #Card{
+        width: 90%;
+        margin-left:15px;
+        height: 250px;
+    }
+    #Card>img{
+        width: 100%;
+    }
+    #error{
+       top: 30%;
+       left: 20%;
+       width: auto;
+       font-size: 150px;
+    }
+    #msgError{
+        top: 52%;
+        text-align: center;
+        margin-right: 60px;
+        margin-left: -30px;
+        width: 60%;
+        font-size: 18px;
+    }
+    #lienHome{
+        font-size: 14px;
+        width: 60%;
+        margin-left: -15%;
+    }
+}

@@ -1,31 +1,28 @@
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import "../../utils/styles/styles.css"
+import settings from '../../utils/styles/settings'
 
 const StyleSpan = styled.span`
 position: absolute;
 left: 35%;
-font-family: 'Montserrat';
-font-style: normal;
+font-family: ${settings.fontFamily};
 font-weight: 700;
 font-size: 288px;
-line-height: 142.6%;
 display: flex;
 align-items: center;
 text-align: center;
-color: #FF6060;
+color: ${settings.primary}
 `
 const StyleTitre = styled.h1`
 position: absolute;
 left: 25%;
 top: 65%;
-font-family: 'Montserrat';
-font-style: normal;
+font-family: ${settings.fontFamily};
 font-weight: 500;
 font-size: 36px;
-line-height: 142.6%;
 display: flex;
-align-items: flex-end;
-color: #FF6060;
+color: ${settings.primary}
 `
 const StyleLink = styled(NavLink)`
 position: absolute;
@@ -33,22 +30,19 @@ left: 40.14%;
 right: 40.14%;
 top: 81.93%;
 bottom: 15.53%;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
+font-family: ${settings.fontFamily};
 font-size: 18px;
-line-height: 142.6%;
 display: flex;
 align-items: flex-end;
 text-decoration-line: underline;
-color: #FF6060;
+color: ${settings.primary}
 `
 function Error() {
   return (
     <div>
-      <StyleSpan>404</StyleSpan>
-      <StyleTitre>Oups! La page que vous demandez n'existe pas</StyleTitre>
-      <StyleLink to="/">Retourner sur la page d’accueil</StyleLink>
+      <StyleSpan id='error'>404</StyleSpan>
+      <StyleTitre id='msgError'>Oups! La page que vous demandez n'existe pas</StyleTitre>
+      <StyleLink to="/" id="lienHome">Retourner sur la page d’accueil</StyleLink>
     </div>
   )
 }
