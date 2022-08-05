@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import "../../utils/styles/styles.css"
+import { NavLink } from "react-router-dom"
 
 const StyleCard= styled.div`
 display: flex;
@@ -31,9 +32,13 @@ border-radius: nullpx;
 function Card ({title, picture}) {
     return (
         <StyleCard id="Card">
+            <NavLink to="/location/:id">
             <StyleImage src={picture} alt="Apartment"/>
-            <StyleTitle>{title}</StyleTitle>
+            </NavLink>
+           <StyleTitle>{title}</StyleTitle>
         </StyleCard>
+       
+        
     )
 }
  Card.propTypes={

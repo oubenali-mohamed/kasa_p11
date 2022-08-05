@@ -35,7 +35,7 @@ function Header() {
      
       <nav className='navigation-mobil'>
         <StyleLink to="/">Accueil </StyleLink>
-        <StyleLink  to="/About">A Propos </StyleLink>
+        <StyleLink  to="/about">A Propos </StyleLink>
       </nav>
     </StyleHeader>
   )
