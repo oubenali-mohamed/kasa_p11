@@ -27,6 +27,13 @@
   color: #ffffff;
 
 }
+.equipementsLocation{
+  padding-top: 10px;
+  list-style-type: none;
+}
+.descriptionLocation{
+  padding-top: 10px;
+}
 @media all and (min-width: 481px) and (max-width: 1200px){
     #root{
         width: auto;
@@ -129,14 +136,32 @@
       height: 10px;
     }
     #contentBox{
-      margin-left: 80px;
+      margin-left: 60px;
+      margin-bottom: 30px;
       border-radius: 0px 0px 5px 5px;
-      height: 120px;
+      height: auto;
     }
     #contentPara{
       height: auto;
       font-size: 14px;
       padding-top: 10px;
+      padding-bottom: 10px;
+      margin-top: 20px;
+    }
+    #styleMobileDrop{
+     margin-left: 50px;
+    }
+    .descriptionLocation{
+      font-size: 14px;
+      padding-top: 20px;
+      margin-top: 25px;
+      padding-bottom: 10px;
+    }
+    .equipementsLocation{
+      margin-top: 25px;
+      padding-top: 10px;
+      font-size: 14px;
+      padding-bottom: 10px;
     }
     
 }
@@ -229,23 +254,58 @@
       flex-direction: row;
       justify-content: space-between;
     }
-    #titleBox{
-      margin-top: 10px;
-    }
     #vectorBox{
       margin-right: 10px;
-      margin-top: 10px;
       width: 15px;
       height: 10px;
     }
     #contentBox{
-      margin-left: 40px;
+      margin-left: 30px;
       border-radius: 0px 0px 5px 5px;
-      height: 120px;
+      height: auto;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
     }
     #contentPara{
       height: auto;
       font-size: 14px;
       padding-top: 10px;
     }
+    #styleLocality{
+      margin-left: 0px;
+    }
+    #containerDetail{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    #styleStars{
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    .stars{
+      margin-top: 30px;
+    }
+    .host{
+      margin-top: 30px;
+      margin-right: 20px;
+    }
+    #styleMobileDrop{
+      display: flex;
+      flex-direction: column;
+      margin-left: 25px;
+      width: 100%;
+    }
+    .descriptionLocation{
+      font-size: 14px;
+      padding-top: 20px;
+    }
+    .equipementsLocation{
+      padding-top: 10px;
+      font-size: 14px;
+    }
+   
 }

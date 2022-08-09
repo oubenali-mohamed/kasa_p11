@@ -39,7 +39,7 @@ flex-direction: row;
 justify-content: space-between;
 `
 const StyleDropLocation = styled.div`
-width: 80%;
+width: 100%;
 margin-left: -30px;
 margin-right: 100px;`
 
@@ -62,8 +62,8 @@ function Location() {
           <div>
             {listImg.map((img, index) => <img key={index} src = {img} alt = "diaporama"/>)}
           </div>
-          <StyleDetail>
-            <StyleLocality>
+          <StyleDetail id='containerDetail'>
+            <StyleLocality id='styleLocality'>
               <div>
                 {<h1>{titltApart}</h1>}
                 {<p>{locality}</p>}
@@ -72,23 +72,23 @@ function Location() {
                 {tags.map((tag, index)=> <li className='Tag' key={index}>{tag}</li>)}
               </div>
             </StyleLocality>
-            <StyleStars>
+            <StyleStars id='styleStars'>
               <div className='detailHost'>
                 {<p  className='host'>{host.name}</p>}
                 <img className='hostPicture' src = {host.picture} alt = "profile host" />
               </div>
-              <div> {stars} </div>
+              <div className='stars'> {stars} </div>
             </StyleStars>
           </StyleDetail>
-          <StyleContainer>
+          <StyleContainer id='styleMobileDrop'>
             <StyleDropLocation>
               <DropDown title='Description'>   
-                  { <p>{description}</p> } 
+                  { <p className='descriptionLocation'>{description}</p> } 
               </DropDown>
             </StyleDropLocation>
             <StyleDropLocation>
               <DropDown title='Équipements'>
-                      {<ul>{equipments.map((equipment, index) => <li key={index}>{equipment}</li>)}</ul>}
+                      {<ul className='equipementsLocation'>{equipments.map((equipment, index) => <li key={index}>{equipment}</li>)}</ul>}
               </DropDown>
             </StyleDropLocation>
           </StyleContainer>
