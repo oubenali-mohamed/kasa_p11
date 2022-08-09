@@ -1,3 +1,32 @@
+.detailHost{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.host{
+  color: red
+}
+.hostPicture{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+}
+.containerTag{
+ display: flex;
+ flex-direction: row;
+}
+.Tag{
+  list-style-type: none;
+  border-radius: 50px;
+  height: auto;
+  width: auto;
+  padding: 5px;
+  background-color: #FF6060;
+  margin-right: 15px;
+  color: #ffffff;
+
+}
 @media all and (min-width: 481px) and (max-width: 1200px){
     #root{
         width: auto;
@@ -82,6 +111,32 @@
     #paraFooter{
        margin-left: 35%;
        padding-top: 150px;
+    }
+    #dropBox{
+      margin-left: 60px;
+      height: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    #titleBox{
+      margin-top: 10px;
+    }
+    #vectorBox{
+     margin-right: 15px;
+      margin-top: 10px;
+      width: 15px;
+      height: 10px;
+    }
+    #contentBox{
+      margin-left: 80px;
+      border-radius: 0px 0px 5px 5px;
+      height: 120px;
+    }
+    #contentPara{
+      height: auto;
+      font-size: 14px;
+      padding-top: 10px;
     }
     
 }
@@ -168,7 +223,7 @@
        padding-top: 150px;
     }
     #dropBox{
-      margin-left: 40px;
+      margin-left: 30px;
       height: 40px;
       display: flex;
       flex-direction: row;
@@ -178,9 +233,8 @@
       margin-top: 10px;
     }
     #vectorBox{
-      margin-left: -80px;
       margin-right: 10px;
-      margin-top: 15px;
+      margin-top: 10px;
       width: 15px;
       height: 10px;
     }

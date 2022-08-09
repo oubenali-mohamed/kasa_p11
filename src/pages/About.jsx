@@ -9,7 +9,7 @@ margin-left: 50px;
 margin-right: 50px;`
 
 function About() {
-  const contents = [
+  const text = [
     {
       "title": "Fiabilité",
       "content": "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.",
@@ -31,7 +31,7 @@ function About() {
     <div>
       <BannerAbout/>
         <div>
-          {contents.map((text, id) => (
+          {text.map((text, id) => (
               <DropDown key={id} title={text.title}>
                 {<StylePara id="contentPara">{text.content}</StylePara>}
               </DropDown>

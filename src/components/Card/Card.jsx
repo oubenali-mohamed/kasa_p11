@@ -29,13 +29,14 @@ top: 268px;
 border-radius: nullpx;
 `
 
-function Card ({title, picture}) {
+function Card ({title, picture, id}) {
+    let detailLink = `/location/${id}`;
     return (
         <StyleCard id="Card">
-            <NavLink to="/location/:id">
-            <StyleImage src={picture} alt="Apartment"/>
+            <NavLink to={ detailLink }>
+                <StyleImage src={picture} alt="Apartment"/>
             </NavLink>
-           <StyleTitle>{title}</StyleTitle>
+           <StyleTitle>{title} </StyleTitle>
         </StyleCard>
        
         
