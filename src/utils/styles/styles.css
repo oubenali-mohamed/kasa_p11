@@ -34,6 +34,60 @@
 .descriptionLocation{
   padding-top: 10px;
 }
+#carousel{
+  width: 1200px;
+  height: 400px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 14px rgba(0,0,0,0.3);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  left: 5%;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  border-radius: 25px;
+}
+#container_image{
+  width: 1200px;
+  height: 400px;
+  border-radius: 25px;
+}
+.image_diaporama{
+  width: 1200px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+.btn{
+  position: absolute;
+  cursor: pointer;
+  top: 150px;
+  width: 50px;
+}
+#btn_prev{
+  margin-left: 30px;
+  opacity: 0.4;
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+#btn_next{
+  right: 0;
+  opacity: 0.4;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+  margin-right: 30px;
+}
+#btn_prev:hover{
+  opacity: 1;
+  transform: rotate(180deg) scale(1.1);
+  transition: all 0.3s ease;
+}
+#btn_next:hover{
+  opacity: 1;
+  transform: rotate(0deg) scale(1.1);
+  transition: all 0.3s ease;
+}
 @media all and (min-width: 481px) and (max-width: 1200px){
     #root{
         width: auto;
@@ -162,6 +216,11 @@
       padding-top: 10px;
       font-size: 14px;
       padding-bottom: 10px;
+    }
+    #carousel{
+      width: 90%;
+     margin-left: 0px;
+      height: auto;
     }
     
 }
@@ -307,5 +366,8 @@
       padding-top: 10px;
       font-size: 14px;
     }
-   
+    #carousel{
+      width: 90%;
+      margin-left: 0px;
+    } 
 }

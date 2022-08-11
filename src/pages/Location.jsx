@@ -6,6 +6,7 @@ import DropDown from "../components/DorpDown/DropDown"
 import styled from 'styled-components'
 import settings from "../utils/styles/settings"
 import "../utils/styles/styles.css"
+import btn_next from "../assets/btn_next.png"
 
 let listImg = []
 let description = ""
@@ -15,6 +16,7 @@ let titltApart = ""
 let tags = ""
 let host = ""
 let stars = ""
+
 
 const StyleLocality = styled.div`
 color: ${settings.primary};
@@ -43,6 +45,7 @@ width: 100%;
 margin-left: -30px;
 margin-right: 100px;`
 
+
 function Location() {
   const { id } = useParams()
   const filterLocation = Apartments.filter(apart => apart.id === id) 
@@ -56,11 +59,44 @@ function Location() {
          tags = filterLocation[i].tags
          host = filterLocation[i].host
          stars = filterLocation[i].rating
- }
+ }  
+        window.onload = function(){
+          let position = 0;
+        let containerImage = document.getElementById("container_image")
+        let btnPrev = document.getElementById("btn_prev")
+        let btnNext = document.getElementById("btn_next")
+        btnPrev.onclick = function() {
+          if(position <= 0 ) {
+            position = listImg.length
+          } else {
+            position--;
+            containerImage.style.transform = "translate("+position*800+"px)" 
+            containerImage.style.transition = "all 0.5s ease"     
+          }
+        }
+        btnNext.onclick = function() {
+          if(position > listImg.length -1) {
+            position = -1
+          } else {
+            position++;
+            containerImage.style.transform = "translate("+position*800+"px)" 
+            containerImage.style.transition = "all 0.5s ease"
+          }
+        }
+        function maskArrow(){
+          if(listImg.length === 1){
+            btnNext.style.display = "none";
+            btnPrev.style.display = "none";
+          }
+        }
+        maskArrow()
+        }
      return (
       <div>
-          <div>
-            {listImg.map((img, index) => <img key={index} src = {img} alt = "diaporama"/>)}
+         <div id='carousel'>
+            {listImg.map((img, index) => <div id='container_image' key={index}><img className='image_diaporama' key={index} src = {img} alt = "diaporama"/></div>)}
+            <img className='btn' id="btn_next" src = {btn_next} alt="button next" />
+            <img className='btn' id="btn_prev" src = {btn_next} alt="button previous" />
           </div>
           <StyleDetail id='containerDetail'>
             <StyleLocality id='styleLocality'>
