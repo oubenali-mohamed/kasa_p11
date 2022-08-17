@@ -25,8 +25,8 @@ justify-content: space-between;
 const  StyleStars = styled.div`
 display: flex;
 flex-direction: column;
-margin-right: 80px;
 width: 15%;
+margin-right: 80px;
 `
 const StyleContainer = styled.div`
 display: flex;
