@@ -6,8 +6,10 @@ import DropDown from "../components/DorpDown/DropDown"
 import styled from 'styled-components'
 import settings from "../utils/styles/settings"
 import "../utils/styles/styles.css"
-import btn_next from "../assets/btn_next.png"
-
+// import btn_next from "../assets/btn_next.png"
+import { FaStar } from 'react-icons/fa';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import { Carousel } from 'react-responsive-carousel';
 
 const StyleLocality = styled.div` 
 color: ${settings.primary};
@@ -41,31 +43,40 @@ function Location() {
   const { id } = useParams()
   const filterLocation = Apartments.filter(apart => apart.id === id) 
   const oneLocation = filterLocation[0]   
-  let position = 0;
+  // let position = 0;
 
-        function next() {
+       /*  function next() {
           if (position >= oneLocation.pictures.length - 1) {
             position = -1;
           } else {
             position++;
+            console.log(position)
           }
         }
 
         function prev() {
           if (position <= 0) {
             position = oneLocation.pictures.length;
-            position--;
           } else {
-           console.log('ok')
+            position--;
+           console.log(position)
           }
-        }
+        } */
     
  //récupération de la donnée rating
-//  console.log(oneLocation.rating)
-       
-     return (
+        const allStars = Array(5).fill()
+        const colorsStar = {
+          pink: "#FF6060",
+          gray: "#e5e5e5",
+        }
+    return (
      <div>
-        <div id='carousel'>
+      <Carousel>
+      {oneLocation.pictures.map((img, index) => <img className='image_diaporama' key={index} src = {img} alt = "diaporama"/>)}
+      </Carousel>
+
+    {/*   <div id='container_image' key={index}></div> */}
+       {/*  { <div id='carousel'>
               {oneLocation.pictures.map((img, index) => <div id='container_image' key={index}><img className='image_diaporama' key={index} src = {img} alt = "diaporama"/></div>)}
               <button id= "btn_prev" className="previous" onClick={prev}> 
                 {oneLocation.pictures.length > 1 &&
@@ -77,7 +88,7 @@ function Location() {
                   <img src={btn_next} alt="boutton suivant" />
               }
               </button>
-         </div>
+         </div>} */}
           <StyleDetail id='containerDetail'>
             <StyleLocality id='styleLocality'>
               <div>
@@ -94,11 +105,12 @@ function Location() {
                 <img className='hostPicture' src = {oneLocation.host.picture} alt = "profile host" />
               </div>
               <div className='stars'> 
-                 <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i> 
+                  {allStars.map((_, index) => (
+                    <FaStar 
+                    key={index}
+                    className="allStars"
+                    color={oneLocation.rating > index ? colorsStar.pink : colorsStar.gray}/>
+                  ))}
               </div>
             </StyleStars>
           </StyleDetail>
