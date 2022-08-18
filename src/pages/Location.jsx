@@ -6,10 +6,10 @@ import DropDown from "../components/DorpDown/DropDown"
 import styled from 'styled-components'
 import settings from "../utils/styles/settings"
 import "../utils/styles/styles.css"
-// import btn_next from "../assets/btn_next.png"
+import btn_next from "../assets/btn_next.png"
 import { FaStar } from 'react-icons/fa';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import { Carousel } from 'react-responsive-carousel';
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+// import { Carousel } from 'react-responsive-carousel';
 
 const StyleLocality = styled.div` 
 color: ${settings.primary};
@@ -43,25 +43,41 @@ function Location() {
   const { id } = useParams()
   const filterLocation = Apartments.filter(apart => apart.id === id) 
   const oneLocation = filterLocation[0]   
-  // let position = 0;
+  let position = 0;
 
-       /*  function next() {
+       function next() {
+          const divImgNext = document.getElementById("container_image")
+          const imgLogement = oneLocation.pictures[position]
           if (position >= oneLocation.pictures.length - 1) {
-            position = -1;
+            position = 0;
           } else {
             position++;
+            if (divImgNext.firstChild != null) {
+              divImgNext.removeChild(divImgNext.firstChild);
+            }
+            const imgNext = document.createElement("img")
+            imgNext.setAttribute("src",imgLogement);
+            divImgNext.appendChild(imgNext);
             console.log(position)
           }
         }
 
         function prev() {
+          const divImgNext = document.getElementById("container_image")
+          const imgLogement = oneLocation.pictures[position]
           if (position <= 0) {
-            position = oneLocation.pictures.length;
+            position = oneLocation.pictures.length -1;
           } else {
             position--;
+            if (divImgNext.firstChild != null) {
+              divImgNext.removeChild(divImgNext.firstChild);
+            }
+            const imgNext = document.createElement("img")
+            imgNext.setAttribute("src",imgLogement);
+            divImgNext.appendChild(imgNext);
            console.log(position)
           }
-        } */
+        }
     
  //récupération de la donnée rating
         const allStars = Array(5).fill()
@@ -71,12 +87,12 @@ function Location() {
         }
     return (
      <div>
-      <Carousel>
+      {/* <Carousel>
       {oneLocation.pictures.map((img, index) => <img className='image_diaporama' key={index} src = {img} alt = "diaporama"/>)}
-      </Carousel>
+      </Carousel> */}
 
-    {/*   <div id='container_image' key={index}></div> */}
-       {/*  { <div id='carousel'>
+  
+        { <div id='carousel'>
               {oneLocation.pictures.map((img, index) => <div id='container_image' key={index}><img className='image_diaporama' key={index} src = {img} alt = "diaporama"/></div>)}
               <button id= "btn_prev" className="previous" onClick={prev}> 
                 {oneLocation.pictures.length > 1 &&
@@ -88,7 +104,7 @@ function Location() {
                   <img src={btn_next} alt="boutton suivant" />
               }
               </button>
-         </div>} */}
+         </div>} 
           <StyleDetail id='containerDetail'>
             <StyleLocality id='styleLocality'>
               <div>
