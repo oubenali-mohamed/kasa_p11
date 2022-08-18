@@ -44,7 +44,7 @@ function Location() {
   const filterLocation = Apartments.filter(apart => apart.id === id) 
   const oneLocation = filterLocation[0]   
   let position = 0;
-
+      
        function next() {
           const divImgNext = document.getElementById("container_image")
           const imgLogement = oneLocation.pictures[position]
@@ -90,9 +90,8 @@ function Location() {
       {/* <Carousel>
       {oneLocation.pictures.map((img, index) => <img className='image_diaporama' key={index} src = {img} alt = "diaporama"/>)}
       </Carousel> */}
-
-  
-        { <div id='carousel'>
+          
+          { <div id='carousel'>
               {oneLocation.pictures.map((img, index) => <div id='container_image' key={index}><img className='image_diaporama' key={index} src = {img} alt = "diaporama"/></div>)}
               <button id= "btn_prev" className="previous" onClick={prev}> 
                 {oneLocation.pictures.length > 1 &&

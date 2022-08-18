@@ -19,11 +19,13 @@ const StyleTitle = styled.span`
 color: #ffffff;
 font-family: ${settings.fontFamily};
 margin-left: 20px;
+margin-bottom: 10px;
 `
 const StyleVector = styled.img`
 margin-right: 20px;
 width: 15px;
 cursor: pointer;
+margin-bottom: 10px;
 `
 const StyleContent = styled.div`
 margin-left 105px;

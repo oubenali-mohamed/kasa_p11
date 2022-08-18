@@ -162,13 +162,16 @@ margin-right: 100px;
                 margin-bottom: 100px;
             }
     #Card{
-        width: 25%;
-        margin-left:5px;
+        width: 30%;
+        margin-left: 5px;
         margin-right: 5px;
         margin-bottom: 60px;
         height: 170px;
             }
-    #Card>img{
+    #Card > a{
+              width: 100%;
+             }       
+    #Card > a img{
              width: 100%;
             }
     #Card>span{
@@ -349,7 +352,11 @@ margin-right: 100px;
       flex-direction: row;
       justify-content: space-between;
     }
+    #titleBox{
+      margin-top: 10px;
+    }
     #vectorBox{
+      margin-top: 10px;
       margin-right: 10px;
       width: 15px;
       height: 10px;
@@ -394,9 +401,7 @@ margin-right: 100px;
       flex-direction: column;
       width: 100%;
     }
-    #dropBox{
-      margin-left: 50px;
-    }
+    
     .descriptionLocation{
       font-size: 14px;
       padding-top: 20px;
