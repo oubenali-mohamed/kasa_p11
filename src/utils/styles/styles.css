@@ -3,8 +3,12 @@
   flex-direction: row;
   justify-content: space-around;
 }
+nav .active{
+  padding-bottom:15px;
+  border-bottom: 2px solid red;
+}
 .host{
-  color: red
+  color: #FF6060;
 }
 .hostPicture{
   border-radius: 50%;
@@ -34,39 +38,6 @@
 .descriptionLocation{
   padding-top: 10px;
 }
-/* .carousel-root{
-  margin-left: 30px;
-   margin-bottom: 50px;
-   width: 95%;
-   height: 450px;
-   border-radius: 25px;
- }
- .carousel-slider{
-   width: 90%;
-   height: 450px;
-   border-radius: 25px;
- }
- .slide{
-   width: 90%;
-   height: 450px;
- }
- .control-dots{
-   display: none;
- }
- .thumbs-wrapper{
-   display: none;
- }
- .carousel-status{
-  color: white;
-  margin-right: 50%;
-  margin-top: 30%;
- }
- .carousel .slide img{
-   height: 450px;
-   width: 80%;
-   border-radius: 25px;
-   object-fit: cover;
- } */
 #carousel{
   width: 1200px;
   height: 400px;
@@ -110,11 +81,13 @@ margin-right: 100px;
   border-radius: 25px;
   object-fit: cover;
 }
-/*
 .fas{
   color:rgba(128, 128, 128, 0.495);
   margin-left: 2px;
-} */
+}
+.pinkStar{
+  color: #FF6060;
+}
 
 @media all and (min-width: 481px) and (max-width: 1200px){
     #root{
@@ -259,9 +232,6 @@ margin-right: 100px;
       margin-left: 0px;
       height: auto;
     }
-    /* .carousel-root{
-      margin-left: 20px;
-    } */
 }
 
 @media all and (max-device-width: 480px){
@@ -435,23 +405,4 @@ margin-right: 100px;
     margin-right: 60px;
     width: 10px;
    }
-   /* .carousel-root{
-    margin-left: 20px;
-     margin-bottom: 50px;
-     width: 90%;
-     height: 300px;
-     border-radius: 25px;
-   }
-   .carousel-slider{
-     height: 300px;
-     border-radius: 25px;
-   }
-   .slide{
-    height: 300px;
-   }
-   .carousel-status{
-    color: white;
-    margin-right: 50%;
-    margin-top: 80%;
-   } */
 }

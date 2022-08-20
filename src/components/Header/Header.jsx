@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
@@ -18,7 +17,7 @@ width: 150px;
 height: 50px;
 margin-left: 20px;
 `
-const StyleLink = styled(Link)`
+const StyleNavLink = styled(NavLink)`
 padding: 15px;
 font-family: ${settings.fontFamily};
 color: ${settings.primary};
@@ -27,6 +26,7 @@ font-size: 24px;
 margin-right: 50px;
 `
 function Header() {
+
   return (
     <StyleHeader className='header-mobil'>
         <NavLink to="/"> 
@@ -34,8 +34,8 @@ function Header() {
         </NavLink>
      
       <nav className='navigation-mobil'>
-        <StyleLink to="/">Accueil </StyleLink>
-        <StyleLink  to="/about">A Propos </StyleLink>
+        <StyleNavLink to="/" className = "active-link">Accueil </StyleNavLink>
+        <StyleNavLink  to="/about" className = "active-link">A Propos </StyleNavLink>
       </nav>
     </StyleHeader>
   )

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useParams } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import Footer from '../components/Footer/Footer'
 import Apartments from "../datas/Apartments.json"
 import DropDown from "../components/DorpDown/DropDown"
@@ -7,9 +8,7 @@ import styled from 'styled-components'
 import settings from "../utils/styles/settings"
 import "../utils/styles/styles.css"
 import btn_next from "../assets/btn_next.png"
-import { FaStar } from 'react-icons/fa';
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-// import { Carousel } from 'react-responsive-carousel';
+
 
 const StyleLocality = styled.div` 
 color: ${settings.primary};
@@ -42,10 +41,14 @@ margin-right: 100px;`
 function Location() {
   const { id } = useParams()
   const filterLocation = Apartments.filter(apart => apart.id === id) 
-  const oneLocation = filterLocation[0]   
+  const oneLocation = filterLocation[0];
   let position = 0;
-      
-       function next() {
+  
+  if(!oneLocation){
+   return <Navigate to="*"/> // route vers le composant Error
+  }
+
+  function next() {
           const divImgNext = document.getElementById("container_image")
           const imgLogement = oneLocation.pictures[position]
           if (position >= oneLocation.pictures.length - 1) {
@@ -58,7 +61,6 @@ function Location() {
             const imgNext = document.createElement("img")
             imgNext.setAttribute("src",imgLogement);
             divImgNext.appendChild(imgNext);
-            console.log(position)
           }
         }
 
@@ -75,22 +77,14 @@ function Location() {
             const imgNext = document.createElement("img")
             imgNext.setAttribute("src",imgLogement);
             divImgNext.appendChild(imgNext);
-           console.log(position)
           }
         }
     
  //récupération de la donnée rating
-        const allStars = Array(5).fill()
-        const colorsStar = {
-          pink: "#FF6060",
-          gray: "#e5e5e5",
-        }
+        const allStars = Array(5).fill(0)
+
     return (
      <div>
-      {/* <Carousel>
-      {oneLocation.pictures.map((img, index) => <img className='image_diaporama' key={index} src = {img} alt = "diaporama"/>)}
-      </Carousel> */}
-          
           { <div id='carousel'>
               {oneLocation.pictures.map((img, index) => <div id='container_image' key={index}><img className='image_diaporama' key={index} src = {img} alt = "diaporama"/></div>)}
               <button id= "btn_prev" className="previous" onClick={prev}> 
@@ -120,12 +114,7 @@ function Location() {
                 <img className='hostPicture' src = {oneLocation.host.picture} alt = "profile host" />
               </div>
               <div className='stars'> 
-                  {allStars.map((_, index) => (
-                    <FaStar 
-                    key={index}
-                    className="allStars"
-                    color={oneLocation.rating > index ? colorsStar.pink : colorsStar.gray}/>
-                  ))}
+                 { allStars.map((star, index) => (oneLocation.rating > index ? <i className="fas fa-star pinkStar" key={index}></i> : <i className="fas fa-star" key={index}></i>) )}
               </div>
             </StyleStars>
           </StyleDetail>
