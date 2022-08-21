@@ -1,8 +1,8 @@
 {
-  "homepage": "https://oubenali-mohamed.github.io/kasa_p11",
   "name": "p_11_kasa",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://oubenali-mohamed.github.io/kasa_p11",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
